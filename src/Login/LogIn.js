@@ -11,11 +11,11 @@ export const LogIn = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const response = await axios.post('http://localhost:8080/api/user/login', {
-            userId,
-            password
+        const response = await axios.post("http://localhost:8080/api/user/login", {
+            userId:userId,
+            password:password,
         });
-        if(response.data === 'success') {
+        if(response.data.message === "Login Successful") {
             navigate('/home');
         } else {
             alert('Invalid credentials');
