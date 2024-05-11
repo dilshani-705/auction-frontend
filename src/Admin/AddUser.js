@@ -20,7 +20,7 @@ export default function AddUser () {
     const handleSubmit = async (e) => {
         try{
         e.preventDefault();
-         await axios.post('http://localhost:8080/api/user',formData);
+         await axios.post('http://localhost:8080/api/user/add',formData);
          alert('User Added Successfully');
     }catch(error){
         console.error('Error in creating user:',error);
