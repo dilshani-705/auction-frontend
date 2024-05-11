@@ -7,7 +7,7 @@ import { useEffect } from "react";
     const[formData, setFormData] = useState({});
 
     useEffect(() => {
-        axios.get(`http://localhost:8080/api/users/${userId}`)
+        axios.get(`http://localhost:8080/api/user/${userId}`)
         .then(response => {
             setFormData(response.data);
         })
