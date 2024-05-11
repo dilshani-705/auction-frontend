@@ -2,7 +2,7 @@ import axios from "axios";
 import { Modal } from "bootstrap";
 import { useEffect } from "react";
 
-function UpdateUser() {
+ export default function UpdateUser() {
     const { userId } = useParams();
     const[formData, setFormData] = useState({});
 
@@ -18,7 +18,7 @@ function UpdateUser() {
     , [userId]);
 
     const handleSubmit = () => {
-        axios.put(`http://localhost:8080/api/users/${userId}`,formData)
+        axios.put(`http://localhost:8080/api/user/${userId}`,formData)
         .then(response => {
             console.log(response);
         })

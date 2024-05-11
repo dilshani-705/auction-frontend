@@ -11,7 +11,7 @@ const navigate=useNavigate();
 
     const fetchData = async () => {
         try {
-            const response = await axios.get('http://localhost:8080/api/users');
+            const response = await axios.get('http://localhost:8080/api/user');
             setUsers(response.data);
         } catch (error) {
             console.error(error);
@@ -23,7 +23,7 @@ const navigate=useNavigate();
     }, []);
 
  function removeEmployee(userId){
-    axios.delete(`http://localhost:8080/api/users/${userId}`)
+    axios.delete(`http://localhost:8080/api/user/${userId}`)
     .then(response => {
         console.log(response);
         fetchData();

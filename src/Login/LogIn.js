@@ -11,7 +11,7 @@ export const LogIn = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const response = await axios.post('http://localhost:8080/users/login', {
+        const response = await axios.post('http://localhost:8080/api/user/login', {
             userId,
             password
         });

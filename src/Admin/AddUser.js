@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 
-function AddUser () {
+export default function AddUser () {
     const [formData, setFormData] = useState({
         userId: '',
         userName: '',
@@ -14,6 +14,7 @@ function AddUser () {
         role: '',
         password: '',
     });
+
 
 
     const handleSubmit = async (e) => {
@@ -42,12 +43,13 @@ function AddUser () {
             role: '',
             password: '',
         });
-    }
+    };
+
 
     return (
         <div>
            <div className="modal show"
-           style={{display: 'block', backgroundColor: 'rgba(0,0,0,0.5)',position: 'fixed',top: '0',left: '0',width: '100%',height: '100%',overflow: 'auto',}}>
+           style={{display: 'block',position: 'fixed'}}>
             <Modal.Dialog>
                 <Modal.Header >
                     <Modal.Title>Add User</Modal.Title>
@@ -56,27 +58,27 @@ function AddUser () {
                     <Form>
                         <Form.Group className="mb-3" controlId="userId">
                             <Form.Label>User Id</Form.Label>
-                            <Form.Control type="text" placeholder="Enter User Id" value={formData.userId} onChange={handleInputChange} />
+                            <Form.Control type="text" name="userId" placeholder="Enter User Id" value={formData.userId} onChange={handleInputChange} />
                         </Form.Group>
 
                         <Form.Group className="mb-3" controlId="userName">
                             <Form.Label>User Name</Form.Label>
-                            <Form.Control type="text" placeholder="Enter User Name" value={formData.userName} onChange={handleInputChange} />
+                            <Form.Control type="text" name="userName" placeholder="Enter User Name" value={formData.userName} onChange={handleInputChange} />
                         </Form.Group>
 
                         <Form.Group className="mb-3" controlId="email">
                             <Form.Label>Email</Form.Label>
-                            <Form.Control type="email" placeholder="Enter Email" value={formData.email} onChange={handleInputChange} />
+                            <Form.Control type="text" name="email" placeholder="Enter Email" value={formData.email} onChange={handleInputChange} />
                         </Form.Group>
 
                         <Form.Group className="mb-3" controlId="address">
                             <Form.Label>Address</Form.Label>
-                            <Form.Control type="text" placeholder="Enter Address" value={formData.address} onChange={handleInputChange} />
+                            <Form.Control type="text"  name="address" placeholder="Enter Address" value={formData.address} onChange={handleInputChange} />
                         </Form.Group>
 
                         <Form.Group className="mb-3" controlId="mobileNo">
                             <Form.Label>Mobile Number</Form.Label>
-                            <Form.Control type="text" placeholder="Enter Mobile Number" value={formData.mobileNo} onChange={handleInputChange} />
+                            <Form.Control type="text" name="mobileNo" placeholder="Enter Mobile Number" value={formData.mobileNo} onChange={handleInputChange} />
                         </Form.Group>
 
                         <Form.Group className="mb-3" controlId="role">
@@ -93,7 +95,7 @@ function AddUser () {
 
                         <Form.Group className="mb-3" controlId="password">
                             <Form.Label>Password</Form.Label>
-                            <Form.Control type="password" placeholder="Enter Password" value={formData.password} onChange={handleInputChange} />
+                            <Form.Control type="password" name="password"placeholder="Enter Password" value={formData.password} onChange={handleInputChange} />
                         </Form.Group>
 
                     </Form>
@@ -113,4 +115,4 @@ function AddUser () {
 
         </div>
     );
-}export default AddUser;
+}
