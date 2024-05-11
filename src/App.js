@@ -5,6 +5,7 @@ import  LogIn  from './Login/LogIn';
 import  Home  from './HomePage/Home';
 import AdminDashboard from './Admin/AdminDashboard';
 import AddUser from './Admin/AddUser';
+import UpdateUser from './Admin/UpdateUser';
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
       <Route path="/home" element={<Home/>}/>
       <Route path='/admin' element={<AdminDashboard/>}/>
       <Route path='/add' element={<AddUser/>}/>
-      <Route path='/update/:userId' element={<AddUser/>}/>
+      <Route path='/update/:userId' element={<UpdateUser/>}/>
     </Routes>
     </BrowserRouter>
   );

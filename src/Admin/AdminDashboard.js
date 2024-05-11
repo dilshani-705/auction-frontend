@@ -63,6 +63,7 @@ function updateEmployee(userId){
                                 <td>{user.address}</td>
                                 <td>{user.mobileNo}</td>
                                 <td>{user.role}</td>
+                                <td>{user.password}</td>
                                 <td>
                                     <button className="btn btn-danger" onClick={() => removeEmployee(user.userId)}>Delete</button>
                                 </td>
