@@ -1,23 +1,34 @@
-// ItemServices.js
 import axios from 'axios';
 
-const BASE_URL = 'http://localhost:8080/api/item'; // Update with your backend API base URL
+const REST_API_BASE_URL = 'http://localhost:8080/api/item';
 
-export const addItemToDatabase = async (itemData) => {
-  try {
-    const response = await axios.post(`${BASE_URL}/items`, itemData);
-    return response.data;
-  } catch (error) {
-    throw error;
-  }
+export const getItem = (itemId) => {
+  const url = `${REST_API_BASE_URL}/${itemId}`;
+  return axios.get(url);
 };
 
-export const uploadImage = async (formData) => {
-  try {
-    const response = await axios.post(`${BASE_URL}/upload/image`, formData);
-    return response.data;
-  } catch (error) {
-    throw error;
-  }
+export const AddItemInfo = (formData) => {
+    const config = {
+        headers: {
+            'Content-Type': 'multipart/form-data'
+        }
+    };
+
+    return axios.post(REST_API_BASE_URL, formData, config);
 };
 
+export const updateItem = (itemId, formData) => {
+  const config = {
+      headers: {
+          'Content-Type': 'multipart/form-data'
+      }
+  };
+
+  const url = `${REST_API_BASE_URL}/${itemId}`;
+
+  return axios.put(url, formData, config);
+};
+
+// export const getItem = (itemId) => axios.get (REST_API_BASE_URL + '/' + itemId);
+
+// export const updateItem = (itemId, itemDto) => axios.put(REST_API_BASE_URL + '/' + itemId, itemDto);
