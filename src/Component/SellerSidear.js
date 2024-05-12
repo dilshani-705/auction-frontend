@@ -9,9 +9,10 @@ export default function SellerSidear() {
   
           <div style={{ backgroundImage: `url(${sideBar})`, position:'fixed', width:'200px', height:'100vh '}}>
   
-              <a className='text-decoration-none text-dark d-flex align-itemcenter'>
+              <a className='text-decoration-bold text-dark d-flex align-itemcenter'>
                   <span className='fs-4'> Seller Dashboard</span>
               </a>
+              <br/><br/>
               <ul className='nav nav-pills flex-column'>
                   <li class="nav-item text-dark fs-5">
                       <a href='#' className='nav-link text-dark'>Items</a>
