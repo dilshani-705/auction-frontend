@@ -14,8 +14,8 @@ import BuyerSidear from './Component/BuyerSidear';
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'; // Import Routes
 
-import AddItemForm from './component/Items/AddItemForm';
-import ViewItems from './component/Items/ViewItems';
+import AddItemForm from './Component/Items/AddItemForm';
+import ViewItems from './Component/Items/ViewItems';
 
 
 
