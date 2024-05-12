@@ -21,6 +21,7 @@ export default function AddUser () {
         try{
         e.preventDefault();
          await axios.post('http://localhost:8080/api/user/add',formData);
+         
          alert('User Added Successfully');
     }catch(error){
         console.error('Error in creating user:',error);
@@ -44,15 +45,13 @@ export default function AddUser () {
             password: '',
         });
     };
-
-
     return (
         <div>
            <div className="modal show"
            style={{display: 'block',position: 'fixed'}}>
             <Modal.Dialog>
                 <Modal.Header >
-                    <Modal.Title>Add User</Modal.Title>
+                    <Modal.Title>Registration</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                     <Form>

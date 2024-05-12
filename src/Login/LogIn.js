@@ -14,22 +14,43 @@ export const LogIn = () => {
         const response = await axios.post("http://localhost:8080/api/user/login", {
             userId:userId,
             password:password,
+ 
         });
         if(response.data.message === "Login Successful") {
-            navigate('/home');
+          let Dashboard="";
+          switch(userId.substring(0,2)){
+            case "AD":
+              Dashboard = "/adminDashboard";
+              break;
+            case "SE":
+              Dashboard = "/sellerDashboard";
+              break;
+            case "BU":
+              Dashboard = "/buyerDashboard";
+              break;
+            
+            default:
+              alert("Invalid User");
+              return;
+          }
+          navigate(Dashboard);
+            
         } else {
             alert('Invalid credentials');
+            return;
         }
     }
+    
     const handleClear = () => {
         setUserId('');
         setPassword('');
-    }
+    };
     
     return(
         <div className="container">
         <h1 className="bg_container">BidZone</h1>
       <main className="d-flex flex-grow-1 justify-content-center align-items-center">
+        <button className="btn btn-primary position-absolute top-0 end-0 m-5" onClick={() => navigate('/add')}>Sign Up</button>
         <div className="col-md-6 p-5 bg-white rounded shadow position-relative">
           
           <div className="d-flex justify-content-center mb-5">
